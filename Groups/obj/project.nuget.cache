@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "tXyX4+bS0XYFr/COvAvpW12qL8CDFfF2eaZYRwhZCBk3Tbu7/yNIty/Jz/zPTiaDIsnlyLUmGcTbFXMi4Ruruw==",
+  "success": true,
+  "projectFilePath": "D:\\College\\Тестування ПЗ\\Практика тестирование ПЗ\\Проектування модульних NUnit-тестів 2\\Groups\\Groups\\Groups.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\danii\\.nuget\\packages\\mstest.testframework\\3.2.2\\mstest.testframework.3.2.2.nupkg.sha512",
+    "C:\\Users\\danii\\.nuget\\packages\\nunit\\4.1.0\\nunit.4.1.0.nupkg.sha512",
+    "C:\\Users\\danii\\.nuget\\packages\\nunit3testadapter\\4.5.0\\nunit3testadapter.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
