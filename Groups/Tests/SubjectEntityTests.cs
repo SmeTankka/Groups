@@ -1,21 +1,36 @@
 using NUnit.Framework;
-using Students.Implementations;
+using Groups.Implementions;
+using Students.Implementations; // Для доступу до TeacherEntity
 
-namespace Students.Tests
+[TestFixture]
+public class SubjectEntityTests
 {
-    [TestFixture]
-    public class SubjectEntityTests
+    [Test]
+    public void Constructor_InitializesPropertiesCorrectly()
     {
-        [Test]
-        public void Constructor_SetsSubjectPropertiesCorrectly()
-        {
-            // Arrange
-            var teacher = new TeacherEntity(3, "Emily", "Stone", 40, "Physics", 15);
-            var subject = new SubjectEntity("Physics 101", teacher);
+        // Arrange
+        string subjectName = "Advanced Physics";
+        var teacher = new TeacherEntity(2, "Emily", "Stone", 40, "Physics", 15);
 
-            // Act & Assert
-            Assert.AreEqual("Physics 101", subject.SubjectName);
-            Assert.AreSame(teacher, subject.Teacher);
-        }
+        // Act
+        var subject = new SubjectEntity(subjectName, teacher);
+
+        // Assert
+        Assert.AreEqual(subjectName, subject.SubjectName);
+        Assert.AreSame(teacher, subject.Teacher);
+    }
+
+    [Test]
+    public void ToString_ReturnsExpectedFormat()
+    {
+        // Arrange
+        var teacher = new TeacherEntity(2, "Emily", "Stone", 40, "Physics", 15);
+        var subject = new SubjectEntity("Advanced Physics", teacher);
+
+        // Act
+        var result = subject.ToString();
+
+        // Assert
+        Assert.AreEqual("Subject: Advanced Physics, Teacher: Emily Stone", result);
     }
 }

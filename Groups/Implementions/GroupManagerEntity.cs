@@ -1,34 +1,40 @@
-using Students.Implementations;
+using Groups.Implementations; 
+using System.Collections.Generic;
+using System.Linq; 
 
-namespace Groups.Implementions;
-
-public class GroupManagerEntity
+namespace Groups.Implementations
 {
-    private List<GroupEntity> groups;
-
-    public GroupManagerEntity()
+    public class GroupManagerEntity
     {
-        groups = new List<GroupEntity>();
-    }
+        private List<GroupEntity> groups;
 
-    public void AddGroup(GroupEntity group)
-    {
-        groups.Add(group);
-    }
+        
+        public List<GroupEntity> Groups => groups;
 
-    public GroupEntity FindGroupById(string groupId)
-    {
-        return groups.FirstOrDefault(g => g.GroupId == groupId);
-    }
-
-    public bool RemoveGroup(string groupId)
-    {
-        var group = FindGroupById(groupId);
-        if (group != null)
+        public GroupManagerEntity()
         {
-            groups.Remove(group);
-            return true;
+            groups = new List<GroupEntity>();
         }
-        return false;
+
+        public void AddGroup(GroupEntity group)
+        {
+            groups.Add(group);
+        }
+
+        public GroupEntity FindGroupById(string groupId)
+        {
+            return groups.FirstOrDefault(g => g.GroupId == groupId);
+        }
+
+        public bool RemoveGroup(string groupId)
+        {
+            var group = FindGroupById(groupId);
+            if (group != null)
+            {
+                groups.Remove(group);
+                return true;
+            }
+            return false;
+        }
     }
 }
